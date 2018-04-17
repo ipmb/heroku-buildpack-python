@@ -42,9 +42,10 @@ if [ ! "$SKIP_PIPENV_INSTALL" ]; then
         fi
 
         export PIPENV_VERSION="11.8.2"
+        export PIP_VERSION="9.0.3"
 
         # Install pipenv.
-        /app/.heroku/python/bin/pip install pipenv==$PIPENV_VERSION --upgrade &> /dev/null
+        /app/.heroku/python/bin/pip install pipenv==$PIPENV_VERSION pip==$PIP_VERSION --upgrade &> /dev/null
 
         # Install the dependencies.
         if [[ ! -f Pipfile.lock ]]; then
